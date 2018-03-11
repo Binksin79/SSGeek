@@ -1,0 +1,33 @@
+﻿@model SSGeek.Models.AlienAgeModel
+
+@{
+    ViewBag.Title = "AlienAge";
+}
+
+<section class="centeredPanel">
+    <h2 class="pagetitles">Alien Age Calculator</h2>
+    <form method="get" action="@Url.Action("AlienAgeResult", "Calculators")">
+        <div class="weightcalc">
+            <p class="questionsweightcalc" style="display:inline-block">Choose a planet</p>
+            <select name="Name"; style="display:inline-block">
+                <option value="Mercury">Mercury</option>
+                <option value="Venus">Venus</option>
+                <option value="Earth">Earth</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturn">Saturn</option>
+                <option value="Uranus">Uranus</option>
+                <option value="Neptune">Neptune</option>
+                <option value="Pluto">Pluto</option>
+            </select>
+        </div>
+        <div class="weightcalc">
+        <p class="questionsweightcalc" style="display:inline-block">Enter your Earth age</p>
+        @Html.TextBoxFor(m => m.EarthAge)
+        </div>
+        <div>
+            <div class="calcbuffer"></div>
+            <button class="calcbutton">Calculate Age</button>
+        </div>
+    </form>
+</section>

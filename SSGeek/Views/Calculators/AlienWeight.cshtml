@@ -1,0 +1,33 @@
+﻿@model SSGeek.Models.AlienWeightModel
+
+@{
+    ViewBag.Title = "AlienWeight";
+}
+
+<section class="centeredPanel">
+    <h2 class="pagetitles">Alien Weight Calculator</h2>
+    <form method="get" action="@Url.Action("AlienWeightResult", "Calculators")">
+        <div class="weightcalc">
+            <p class="questionsweightcalc" style="display:inline-block">Choose a planet</p>
+            <select name="Name"; style="display:inline-block">
+                <option value="Mercury">Mercury</option>
+                <option value="Venus">Venus</option>
+                <option value="Earth">Earth</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturn">Saturn</option>
+                <option value="Uranus">Uranus</option>
+                <option value="Neptune">Neptune</option>
+                <option value="Pluto">Pluto</option>
+            </select>
+        </div>
+        <div class="weightcalc">
+            <p class="questionsweightcalc" style="display:inline-block">Enter your Earth weight</p>
+            @Html.TextBoxFor(m => m.EarthMass)
+        </div>
+        <div>
+            <div class="calcbuffer"></div>
+            <button class="calcbutton">Calculate Weight</button>
+        </div>
+    </form>
+</section>

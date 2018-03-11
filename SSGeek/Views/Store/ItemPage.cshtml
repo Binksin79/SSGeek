@@ -1,0 +1,25 @@
+﻿@model SSGeek.Models.Product
+
+@{
+    ViewBag.Title = "ItemPage";
+}
+
+<section class="centeredPanel">
+    <h2>Solar System Geek Gift Shop</h2>
+    <div class="mainholdercart">
+        
+        <img class="imageaddcart" src="~/Content/img/@Model.ImageName" />
+        
+        <div class="cartholder">
+            <h1> @Model.Name</h1>
+            <span class="modelprice">$@Model.Price</span>
+            <p> @Model.Description</p>
+            <p style="display:inline">Quantity To buy:</p>
+            <form style="display:inline-block" action="@Url.Action("AddToCart")" method="post">
+                <input type="number" name="quantity" value="1" />
+                <input type="hidden" value="@Model.ProductId" name="id" />
+                <button class="cartbutton">Add To Cart</button>
+            </form>
+        </div>
+    </div>
+</section>

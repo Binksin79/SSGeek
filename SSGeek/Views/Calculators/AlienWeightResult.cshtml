@@ -1,0 +1,13 @@
+﻿@model SSGeek.Models.AlienWeightModel
+
+@{
+    ViewBag.Title = "AlienWeightResult";
+}
+
+
+
+<section class="centeredPanel">
+    @* <h2>Alien Weight Result</h2> *@
+    <img class="result-img" src="~/Content/img/@(Model.Name).jpg" />
+    <span>If you are are @Model.EarthMass lbs on planet Earth, you would weigh @Model.GetAlienWeight() lbs on @(Model.Name).</span>
+</section>

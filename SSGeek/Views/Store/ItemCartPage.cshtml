@@ -1,0 +1,37 @@
+﻿@model SSGeek.Models.ShoppingCart
+
+@{
+    ViewBag.Title = "ItemCartPage";
+}
+
+<section class="centeredPanel">
+    <h2>ItemCartPage</h2>
+    <div style="overflow-x:auto;">
+        <table class="w3-responsive">
+            <tr style="font-weight:bold">
+                <td class="first" style="text-align: right"></td>
+                <td class="second" style="text-align: right">Name</td>
+                <td class="third" style="text-align: right">Price</td>
+                <td class="fourth" style="text-align: right">Quantity</td>
+                <td class="fifth" style="text-align: right">Total</td>
+            </tr>
+            @foreach (var product in Model.Items)
+            {
+                <tr class="plzhelp">
+                    <td class="first" style="text-align: center"><img class="w3-image" src="~/Content/img/@product.Product.ImageName" /></td>
+                    <td class="second" style="text-align: right">@product.Product.Name</td>
+                    <td class="third" style="text-align: right">@(product.Product.Price.ToString("C"))</td>
+                    <td class="fourth" style="text-align: right">@product.Quantity</td>
+                    <td class="fifth" style="text-align: right">@((product.Product.Price * product.Quantity).ToString("C"))</td>
+                </tr>
+            }
+            <tr>
+                <td class="first"></td>
+                <td class="second"></td>
+                <td class="third"></td>
+                <td class="fourth" style="text-align:right; font-weight:bold">Grand Total</td>
+                <td class="fifth" style="text-align: right">@Model.GetGrandTotal().ToString("C")</td>
+            </tr>
+        </table>
+    </div>
+</section>

@@ -1,0 +1,13 @@
+﻿@model SSGeek.Models.AlienTravelModel
+
+@{
+    ViewBag.Title = "AlienTravelResult";
+}
+
+<h2>AlienTravelResult</h2>
+
+
+<section class="centeredPanel">
+    <img src="~/Content/img/@(Model.Name).jpg" />
+    <span>Traveling by @Model.TransportMode you will reach @Model.Name in @Model.GetTime() years. You will be @(Model.Age + Model.GetTime()) years old.</span>
+</section>

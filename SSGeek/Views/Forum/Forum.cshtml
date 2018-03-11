@@ -1,0 +1,43 @@
+﻿@model List<SSGeek.Models.ForumPost>
+
+@{
+    ViewBag.Title = "Index";
+    int counter = 1;
+    string colorClass = "forum-white";
+}
+
+
+
+<section class="centeredPanel">
+
+    <div align="center">
+        <h2 class="pagetitles">Solar System Geek Forum</h2>
+        <a href="~/Forum/ForumPost">Post a Message</a>
+    </div>
+    <div class="forum-content">
+        @foreach (var post in Model)
+        {
+
+            if (counter == 1)
+            {
+                colorClass = "forum-white";
+                counter++;
+            }
+            else
+            {
+                colorClass = "forum-grey";
+                counter = 1;
+            }
+
+            <div class="forum-post-div @colorClass">
+                <div class="forum-post-head">
+                    <p class="forum-subject">@post.Subject</p>
+                    <p class="forum-text">by @post.Username on @post.PostDate.ToShortDateString() at @post.PostDate.ToShortTimeString()</p>
+                </div>
+                <div class="forum-post-content">
+                    <p class="forum-post">@post.Message</p>
+                </div>
+            </div>
+        }
+    </div>
+</section>

@@ -1,0 +1,41 @@
+﻿@model SSGeek.Models.AlienTravelModel
+
+@{
+    ViewBag.Title = "AlienTravel";
+}
+
+<section class="centeredPanel">
+    <h2 class="pagetitles">Alien Travel Calculator</h2>
+    <form method="get" action="@Url.Action("AlienTravelResult", "Calculators")">
+        <div class="weightcalc">
+            <p class="questionstravelcalc" style="display:inline-block">Choose a planet</p>
+            <select name="Name" style="display:inline-block">
+                <option value="Mercury">Mercury</option>
+                <option value="Venus">Venus</option>
+                <option value="Earth">Earth</option>
+                <option value="Mars">Mars</option>
+                <option value="Jupiter">Jupiter</option>
+                <option value="Saturn">Saturn</option>
+                <option value="Uranus">Uranus</option>
+                <option value="Neptune">Neptune</option>
+                <option value="Pluto">Pluto</option>
+            </select>
+        </div>
+        <div class="weightcalc">
+            <p class="questionstravelcalc" style="display:inline-block">Choose a mode of transport</p>
+            <select name="TransportMode">
+                <option value="Walking">Walking</option>
+                <option value="Car">Car</option>
+                <option value="Bullet Train">Bullet Train</option>
+                <option value="Boeing 747">Boeing 747</option>
+                <option value="Concorde">Concorde</option>
+            </select>
+        </div>
+        <p class="questionstravelcalc" style="display:inline-block">Enter your Earth age</p>
+        @Html.TextBoxFor(m => m.Age)
+        <div class="weightcalc">
+            <div class="weightbuffer"></div>
+            <button class="calcbutton">Calculate Travel Time</button>
+        </div>
+    </form>
+</section>

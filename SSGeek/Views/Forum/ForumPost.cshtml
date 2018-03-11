@@ -1,0 +1,30 @@
+﻿@model SSGeek.Models.ForumPost
+@{
+    ViewBag.Title = "ForumPost";
+}
+
+
+
+<section class="centeredPanel">
+    <h2 class="pagetitles">New Geek Post</h2>
+    <form method="post" action="@Url.Action("ForumPost", "Forum")">
+        <div>
+            <div class="foruminputs">
+                <p class="geekpost">Username</p>
+                <input type="text" name="Username" />
+            </div>
+            <div class="foruminputs">
+                <p class="geekpost">Subject</p>
+                <input type="text" name="Subject" />
+            </div>
+            <div class="foruminputs">
+                <p class="geekpost">Message</p>
+                <input type="text" name="Message" />
+            </div>
+            <div class="foruminputs">
+                <div class="buffer"></div>
+                <button class="forumbutton">Submit</button>
+            </div>
+        </div>
+    </form>
+</section>
